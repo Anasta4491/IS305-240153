@@ -1,0 +1,252 @@
+classDiagram
+  direction TB
+
+  class CampusServiceApp {
+    -manager : ServiceRequestManager
+    -io : ConsoleIO
+    +run()
+    +registerUser()
+    +submitRequest()
+    +updateMyRequest()
+    +cancelMyRequest()
+    +officerWorkspace()
+    +technicianWorkspace()
+    +filterAndSort()
+    +managementReports()
+    +viewAuditLog()
+  }
+
+  class ServiceRequestManager {
+    -users : User[]
+    -requests : ServiceRequest[]
+    -auditLog : object[]
+    -dataStore : CampusDataStore
+    +createWithDataStore(dataStore)$
+    +registerUser(user)
+    +findUserById(userId)
+    +submitRequest(request)
+    +findRequestById(requestId)
+    +getRequestsByUser(userId)
+    +getAllRequests()
+    +updateRequest(requestId, userId, changes)
+    +cancelRequest(requestId, userId, reason)
+    +searchRequests(searchText)
+    +getRequestSummaryByStatus()
+    +reviewRequest(requestId, officerId, comment)
+    +setPriority(requestId, officerId, priority, comment)
+    +assignTechnician(requestId, officerId, technicianId, comment)
+    +startWork(requestId, technicianId, comment)
+    +addProgressNote(requestId, technicianId, note)
+    +resolveRequest(requestId, technicianId, notes)
+    +closeRequest(requestId, officerId, comment)
+    +filterRequests(filters)
+    +sortRequests(sortBy, order)
+    +getRequestHistory(requestId)
+    +getAuditLog(filters)
+    -runAction(details, change)
+    -addAudit(entry)
+    -save(parts)
+  }
+
+  class User {
+    -userId : string
+    -firstName : string
+    -lastName : string
+    -email : string
+    -userType : string
+    +getFullName() string
+    +getRole() string
+    +canSubmitRequests() boolean
+    +canManageRequests() boolean
+    +canWorkOnRequests() boolean
+    +canViewReports() boolean
+    +validate() boolean
+    +displayInfo() string
+    +toJSON() object
+  }
+  class StudentRequester {
+    -programme : string
+    -yearLevel : number
+    +validateSpecialisedFields()
+    +displayInfo() string
+  }
+  class StaffRequester {
+    -department : string
+    +validateSpecialisedFields()
+    +displayInfo() string
+  }
+  class ServiceOfficer {
+    -serviceSection : string
+    +canManageRequests() boolean
+  }
+  class Technician {
+    -speciality : string
+    +canWorkOnRequests() boolean
+  }
+  class SystemAdministrator {
+    +canViewReports() boolean
+  }
+
+  class ServiceRequest {
+    <<abstract>>
+    -requestId : string
+    -requester : User
+    -title : string
+    -description : string
+    -location : string
+    -category : string
+    -priority : string
+    -status : string
+    -dateSubmitted : Date
+    -dateUpdated : Date
+    -assignedTechnicianId : string
+    -dateResolved : Date
+    -dateClosed : Date
+    -resolutionNotes : string
+    -history : object[]
+    +calculatePriorityScore()* number
+    +getTargetResolutionHours()* number
+    +getRequestSummary()* string
+    +validate() boolean
+    +validateSpecialisedFields() boolean
+    +updateDetails(changes, actor)
+    +cancelRequest(actor, reason)
+    +review(actor, comment)
+    +setPriority(priority, actor, comment)
+    +assignTechnician(technicianId, actor, comment)
+    +startWork(actor, comment)
+    +addProgressNote(actor, note)
+    +resolve(actor, notes)
+    +close(actor, comment)
+    +changeStatus(newStatus, details)
+    +getHistory() object[]
+    +isOverdue(now) boolean
+    +toJSON() object
+  }
+  class ICTSupportRequest {
+    -deviceType : string
+    -systemName : string
+    -faultType : string
+    -networkImpact : string
+    +calculatePriorityScore() number
+    +getTargetResolutionHours() number
+    +getRequestSummary() string
+    +validateSpecialisedFields() boolean
+  }
+  class MaintenanceRequest {
+    -building : string
+    -roomNumber : string
+    -hazardLevel : string
+    -equipmentAffected : string
+    +calculatePriorityScore() number
+    +getTargetResolutionHours() number
+    +getRequestSummary() string
+    +validateSpecialisedFields() boolean
+  }
+  class CleaningRequest {
+    -cleaningArea : string
+    -hygieneRisk : string
+    -serviceType : string
+    -preferredServiceTime : string
+    +calculatePriorityScore() number
+    +getTargetResolutionHours() number
+    +getRequestSummary() string
+    +validateSpecialisedFields() boolean
+  }
+  class GeneralServiceRequest {
+    -serviceArea : string
+    +calculatePriorityScore() number
+    +getTargetResolutionHours() number
+    +getRequestSummary() string
+    +validateSpecialisedFields() boolean
+  }
+
+  class ServiceRequestFactory {
+    +create(commonData, specialisedData)$ ServiceRequest
+    +createFromData(savedData, links)$ ServiceRequest
+  }
+  class UserFactory {
+    +createFromData(data)$ User
+  }
+
+  class CampusDataStore {
+    -users : UserFileRepository
+    -requests : ServiceRequestFileRepository
+    -history : RequestHistoryFileRepository
+    -audit : AuditFileRepository
+    +loadAll()
+    +saveUsers(users)
+    +saveRequests(requests)
+    +saveAudit(entries)
+  }
+  class JsonFileRepository {
+    -filePath : string
+    -idField : string
+    +loadAll()
+    +saveAll(records)
+    +create(record)
+    +findById(id)
+    +findWhere(predicate)
+    +update(id, changes)
+  }
+  class UserFileRepository {
+    +findByType(userType)
+  }
+  class ServiceRequestFileRepository {
+    +findByRequester(userId)
+    +findByTechnician(technicianId)
+  }
+  class RequestHistoryFileRepository {
+    +findByRequest(requestId)
+  }
+  class AuditFileRepository {
+    +findByRequest(requestId)
+    +findByActor(actorId)
+  }
+
+  class ReportGenerator {
+    -requests : ServiceRequest[]
+    -users : User[]
+    +groupByStatus()
+    +groupByCategory()
+    +groupByPriority()
+    +getUrgentRequests()
+    +getOverdueRequests(now)
+    +getAssignmentsByTechnician()
+    +getCompletedByTechnician()
+    +getAverageResolutionTime()
+    +getVolumeByLocation()
+  }
+
+  User <|-- StudentRequester
+  User <|-- StaffRequester
+  User <|-- ServiceOfficer
+  User <|-- Technician
+  User <|-- SystemAdministrator
+
+  ServiceRequest <|-- ICTSupportRequest
+  ServiceRequest <|-- MaintenanceRequest
+  ServiceRequest <|-- CleaningRequest
+  ServiceRequest <|-- GeneralServiceRequest
+  ServiceRequest "*" --> "1" User : requester
+
+  CampusServiceApp --> ServiceRequestManager : uses
+  CampusServiceApp ..> ReportGenerator : creates
+  CampusServiceApp ..> ServiceRequestFactory : creates requests
+  CampusServiceApp ..> UserFactory : creates users
+  ServiceRequestManager o-- "*" User : manages
+  ServiceRequestManager o-- "*" ServiceRequest : manages
+  ServiceRequestManager --> "0..1" CampusDataStore : saves through
+  ReportGenerator ..> ServiceRequest : reads
+
+  CampusDataStore *-- UserFileRepository
+  CampusDataStore *-- ServiceRequestFileRepository
+  CampusDataStore *-- RequestHistoryFileRepository
+  CampusDataStore *-- AuditFileRepository
+  CampusDataStore ..> UserFactory : restores users
+  CampusDataStore ..> ServiceRequestFactory : restores requests
+
+  JsonFileRepository <|-- UserFileRepository
+  JsonFileRepository <|-- ServiceRequestFileRepository
+  JsonFileRepository <|-- RequestHistoryFileRepository
+  JsonFileRepository <|-- AuditFileRepository

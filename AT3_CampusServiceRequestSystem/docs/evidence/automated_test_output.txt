@@ -1,0 +1,62 @@
+▶ Credit extension - inheritance and constructor chaining
+  ✔ C01 user subclasses call super() and inherit User behaviour (1.708917ms)
+  ✔ C02 request subclasses call super() and keep base fields (0.903628ms)
+  ✔ C03 specialised fields are validated (1.183628ms)
+✔ Credit extension - inheritance and constructor chaining (4.787908ms)
+▶ Credit extension - roles and workflow
+  ✔ C04 full workflow Submitted -> Reviewed -> Assigned -> In Progress -> Resolved -> Closed (4.74995ms)
+  ✔ C05 only Service Officers can review, set priority, assign Technicians and close (1.70813ms)
+  ✔ C06 only the assigned Technician can start, update and resolve the work (0.991696ms)
+  ✔ C07 invalid status transitions are rejected (1.369709ms)
+  ✔ C08 Closed and Cancelled are final statuses (0.638361ms)
+✔ Credit extension - roles and workflow (10.120316ms)
+▶ Credit extension - overriding, search, filter, sort and history
+  ✔ C09 specialised summaries display the correct information (1.010255ms)
+  ✔ C10 search, filter and sort return correct results (2.126481ms)
+  ✔ C11 request history records every approved workflow action (1.780011ms)
+  ✔ C12 Technicians and officers cannot submit requests (0.387501ms)
+✔ Credit extension - overriding, search, filter, sort and history (5.720078ms)
+▶ Distinction - abstraction and polymorphism
+  ✔ D01 ServiceRequest cannot be created directly and abstract methods throw clear errors (11.121465ms)
+  ✔ D02 one collection, same method calls, specialised results (4.447085ms)
+✔ Distinction - abstraction and polymorphism (16.656212ms)
+▶ Distinction - JSON persistence and restoration
+  ✔ D03 missing data files are created as empty arrays (9.90806ms)
+  ✔ D04 an empty file is treated as an empty array (2.069255ms)
+  ✔ D05 users, requests, history and audit are saved after successful actions (25.017554ms)
+  ✔ D06 invalid records are never saved (31.8846ms)
+  ✔ D07 saved requests reload as the correct specialised objects with history (41.483069ms)
+  ✔ D08 the factory rebuilds each type and rejects unknown types (1.940499ms)
+  ✔ D09 damaged JSON and damaged records give clear errors or warnings (6.105502ms)
+  ✔ D10 file-writing errors are reported clearly and the change is not kept (2.934276ms)
+  ✔ D11 repository CRUD and find methods (7.452103ms)
+✔ Distinction - JSON persistence and restoration (129.94728ms)
+▶ Distinction - audit trail and reports
+  ✔ D12 audit trail records actions with all required fields, including refusals (3.334377ms)
+  ✔ D13 report calculations (2.390067ms)
+✔ Distinction - audit trail and reports (6.272553ms)
+▶ Pass component - users
+  ✔ P01 valid user registration adds the user (2.055978ms)
+  ✔ P02 duplicate user ID is rejected (0.785347ms)
+  ✔ P03 missing user ID, missing names and invalid email are rejected (0.354494ms)
+  ✔ P04 controlled setters validate new values and userId cannot be changed (0.284589ms)
+✔ Pass component - users (4.565018ms)
+▶ Pass component - requests
+  ✔ P05 valid request is stored with Submitted status (3.369607ms)
+  ✔ P06 invalid request category is rejected clearly (1.299049ms)
+  ✔ P07 missing title/description and unsupported priority are rejected (0.52713ms)
+  ✔ P08 duplicate request ID is rejected (0.931951ms)
+  ✔ P09 view requester records shows only that user's requests (1.581638ms)
+  ✔ P10 requester updates own Submitted request; other users are refused (1.381245ms)
+  ✔ P11 cancel Submitted request changes status to Cancelled (0.557172ms)
+  ✔ P12 cancelling another user's request or an already Cancelled request is rejected (0.642075ms)
+  ✔ P13 search and status summary (0.774706ms)
+✔ Pass component - requests (11.624304ms)
+ℹ tests 38
+ℹ suites 8
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 421.614915

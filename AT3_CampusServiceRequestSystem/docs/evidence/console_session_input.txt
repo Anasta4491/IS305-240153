@@ -1,0 +1,81 @@
+1
+1
+DWU2026010
+Anna
+Tau
+anna.tau@student.campus.example
+Bachelor of Science
+1
+2
+DWU2026010
+2
+Broken window latch in tutorial room
+The window latch is broken and the window will not close.
+Science Building
+2
+Science Building
+S-12
+2
+Window latch
+10
+OFF001
+1
+2
+REQ010
+Checked on site - window cannot be secured.
+4
+REQ010
+TECH002
+Fix before the evening lock-up.
+0
+11
+TECH002
+2
+REQ010
+
+3
+REQ010
+Old latch removed. Replacement ordered from store.
+4
+REQ010
+Fitted a new window latch and tested it.
+0
+10
+OFF001
+6
+REQ010
+Requester confirmed the window now locks.
+0
+13
+REQ010
+7
+DWU2026002
+REQ010
+x
+y
+1
+2
+DWU2026011
+Ben
+Kora
+ben.kora@
+Finance
+1
+1
+DWU2026001
+Copy
+Cat
+copy.cat@student.campus.example
+BIT
+1
+10
+DWU2026010
+8
+latch
+9
+14
+ADM001
+9
+6
+0
+0

@@ -1,0 +1,432 @@
+[
+  {
+    "auditId": "AUD0001",
+    "actorId": "DWU2026001",
+    "actorRole": "Student",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Grace Kila registered as Student.",
+    "timestamp": "2026-08-31T22:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0002",
+    "actorId": "DWU2026002",
+    "actorRole": "Student",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Peter Wama registered as Student.",
+    "timestamp": "2026-08-31T22:05:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0003",
+    "actorId": "STF1001",
+    "actorRole": "Staff",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Ruth Kaupa registered as Staff.",
+    "timestamp": "2026-08-31T22:10:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0004",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Michael Tobias registered as Service Officer.",
+    "timestamp": "2026-08-31T22:15:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0005",
+    "actorId": "TECH001",
+    "actorRole": "Technician",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "John Bais registered as Technician.",
+    "timestamp": "2026-08-31T22:20:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0006",
+    "actorId": "TECH002",
+    "actorRole": "Technician",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Lucy Aihi registered as Technician.",
+    "timestamp": "2026-08-31T22:25:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0007",
+    "actorId": "TECH003",
+    "actorRole": "Technician",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Samuel Pona registered as Technician.",
+    "timestamp": "2026-08-31T22:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0008",
+    "actorId": "ADM001",
+    "actorRole": "Administrator",
+    "action": "User Registered",
+    "requestId": null,
+    "description": "Helen Morobe registered as Administrator.",
+    "timestamp": "2026-08-31T22:35:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0009",
+    "actorId": "DWU2026001",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ001",
+    "description": "ICTSupportRequest \"Unable to access campus Wi-Fi\" submitted (High).",
+    "timestamp": "2026-09-07T23:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0010",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ001",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-09-08T00:05:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0011",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Technician Assigned",
+    "requestId": "REQ001",
+    "description": "Assigned to Technician TECH001 (John Bais). Status Reviewed -> Assigned.",
+    "timestamp": "2026-09-08T00:10:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0012",
+    "actorId": "TECH001",
+    "actorRole": "Technician",
+    "action": "Work Started",
+    "requestId": "REQ001",
+    "description": "Status changed to In Progress. Status Assigned -> In Progress.",
+    "timestamp": "2026-09-08T01:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0013",
+    "actorId": "TECH001",
+    "actorRole": "Technician",
+    "action": "Progress Note Added",
+    "requestId": "REQ001",
+    "description": "Note: Access point AP-L2-03 was not getting an IP lease. Restarted the switch port.",
+    "timestamp": "2026-09-08T02:15:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0014",
+    "actorId": "TECH001",
+    "actorRole": "Technician",
+    "action": "Request Resolved",
+    "requestId": "REQ001",
+    "description": "Resolved: Replaced faulty patch cable to AP-L2-03. Wi-Fi working on Level 2. Status In Progress -> Resolved.",
+    "timestamp": "2026-09-08T04:40:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0015",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Closed",
+    "requestId": "REQ001",
+    "description": "Completion verified and request closed. Status Resolved -> Closed.",
+    "timestamp": "2026-09-08T22:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0016",
+    "actorId": "STF1001",
+    "actorRole": "Staff",
+    "action": "Request Created",
+    "requestId": "REQ002",
+    "description": "MaintenanceRequest \"Roof leaking above lecture seats\" submitted (Normal).",
+    "timestamp": "2026-09-15T03:10:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0017",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ002",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-09-15T04:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0018",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Priority Changed",
+    "requestId": "REQ002",
+    "description": "Priority changed from Normal to High.",
+    "timestamp": "2026-09-15T04:05:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0019",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Technician Assigned",
+    "requestId": "REQ002",
+    "description": "Assigned to Technician TECH002 (Lucy Aihi). Status Reviewed -> Assigned.",
+    "timestamp": "2026-09-15T04:10:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0020",
+    "actorId": "TECH002",
+    "actorRole": "Technician",
+    "action": "Work Started",
+    "requestId": "REQ002",
+    "description": "Status changed to In Progress. Status Assigned -> In Progress.",
+    "timestamp": "2026-09-15T22:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0021",
+    "actorId": "TECH002",
+    "actorRole": "Technician",
+    "action": "Request Resolved",
+    "requestId": "REQ002",
+    "description": "Resolved: Resealed two roof sheets and replaced three stained ceiling panels. Status In Progress -> Resolved.",
+    "timestamp": "2026-09-16T05:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0022",
+    "actorId": "STF1001",
+    "actorRole": "Staff",
+    "action": "Request Created",
+    "requestId": "REQ003",
+    "description": "MaintenanceRequest \"Office door lock jammed\" submitted (Low).",
+    "timestamp": "2026-09-24T23:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0023",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ003",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-09-25T00:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0024",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Technician Assigned",
+    "requestId": "REQ003",
+    "description": "Assigned to Technician TECH002 (Lucy Aihi). Status Reviewed -> Assigned.",
+    "timestamp": "2026-09-25T00:05:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0025",
+    "actorId": "TECH002",
+    "actorRole": "Technician",
+    "action": "Work Started",
+    "requestId": "REQ003",
+    "description": "Status changed to In Progress. Status Assigned -> In Progress.",
+    "timestamp": "2026-09-25T23:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0026",
+    "actorId": "TECH002",
+    "actorRole": "Technician",
+    "action": "Request Resolved",
+    "requestId": "REQ003",
+    "description": "Resolved: Replaced lock cylinder and latch. Two new keys given to the office. Status In Progress -> Resolved.",
+    "timestamp": "2026-09-25T23:45:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0027",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Closed",
+    "requestId": "REQ003",
+    "description": "Completion verified and request closed. Status Resolved -> Closed.",
+    "timestamp": "2026-09-26T03:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0028",
+    "actorId": "DWU2026001",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ004",
+    "description": "CleaningRequest \"Rubbish bins overflowing\" submitted (Normal).",
+    "timestamp": "2026-10-01T02:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0029",
+    "actorId": "DWU2026001",
+    "actorRole": "Student",
+    "action": "Request Cancelled",
+    "requestId": "REQ004",
+    "description": "Request cancelled: Bins were emptied on the normal collection run. Status Submitted -> Cancelled.",
+    "timestamp": "2026-10-01T05:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0030",
+    "actorId": "DWU2026002",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ005",
+    "description": "CleaningRequest \"Blocked and overflowing toilet\" submitted (High).",
+    "timestamp": "2026-10-19T21:45:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0031",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ005",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-10-19T22:10:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0032",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Technician Assigned",
+    "requestId": "REQ005",
+    "description": "Assigned to Technician TECH003 (Samuel Pona). Status Reviewed -> Assigned.",
+    "timestamp": "2026-10-19T22:15:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0033",
+    "actorId": "TECH003",
+    "actorRole": "Technician",
+    "action": "Work Started",
+    "requestId": "REQ005",
+    "description": "Status changed to In Progress. Status Assigned -> In Progress.",
+    "timestamp": "2026-10-19T23:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0034",
+    "actorId": "TECH003",
+    "actorRole": "Technician",
+    "action": "Progress Note Added",
+    "requestId": "REQ005",
+    "description": "Note: Floor cleaned. Plumber needed to clear the blockage.",
+    "timestamp": "2026-10-20T00:30:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0035",
+    "actorId": "STF1001",
+    "actorRole": "Staff",
+    "action": "Request Created",
+    "requestId": "REQ006",
+    "description": "ICTSupportRequest \"Projector shows no signal\" submitted (Normal).",
+    "timestamp": "2026-10-22T00:20:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0036",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ006",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-10-22T01:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0037",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Technician Assigned",
+    "requestId": "REQ006",
+    "description": "Assigned to Technician TECH001 (John Bais). Status Reviewed -> Assigned.",
+    "timestamp": "2026-10-22T01:05:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0038",
+    "actorId": "DWU2026001",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ007",
+    "description": "MaintenanceRequest \"Exposed electrical wiring\" submitted (High).",
+    "timestamp": "2026-10-23T05:00:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0039",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Request Reviewed",
+    "requestId": "REQ007",
+    "description": "Reviewed by Michael Tobias. Status Submitted -> Reviewed.",
+    "timestamp": "2026-10-23T05:20:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0040",
+    "actorId": "OFF001",
+    "actorRole": "Service Officer",
+    "action": "Priority Changed",
+    "requestId": "REQ007",
+    "description": "Priority changed from High to Urgent.",
+    "timestamp": "2026-10-23T05:25:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0041",
+    "actorId": "DWU2026002",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ008",
+    "description": "GeneralServiceRequest \"Street light not working near car park\" submitted (Normal).",
+    "timestamp": "2026-10-24T08:40:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0042",
+    "actorId": "DWU2026002",
+    "actorRole": "Student",
+    "action": "Request Created",
+    "requestId": "REQ009",
+    "description": "ICTSupportRequest \"Cannot log in to Moodle before assignment deadline\" submitted (Urgent).",
+    "timestamp": "2026-10-24T22:15:00.000Z",
+    "outcome": "Success"
+  },
+  {
+    "auditId": "AUD0043",
+    "actorId": "DWU2026002",
+    "actorRole": "Student",
+    "action": "Request Reviewed",
+    "requestId": "REQ009",
+    "description": "Only a Service Officer can review requests. DWU2026002 is a Student.",
+    "timestamp": "2026-10-24T22:20:00.000Z",
+    "outcome": "Rejected"
+  }
+]

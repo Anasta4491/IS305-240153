@@ -1,0 +1,40 @@
+sequenceDiagram
+  autonumber
+  actor R as Requester (Student/Staff)
+  participant App as CampusServiceApp
+  participant Mgr as ServiceRequestManager
+  participant F as ServiceRequestFactory
+  participant Req as ICTSupportRequest
+  participant DS as CampusDataStore
+  participant Repo as Repositories (JSON files)
+
+  R->>App: Option 2 "Submit Service Request"
+  App->>R: Ask user ID
+  R-->>App: DWU2026001
+  App->>Mgr: findUserById("DWU2026001")
+  Mgr-->>App: StudentRequester
+  App->>App: canSubmitRequests()?
+  App->>R: Ask category, title, description, location, priority, specialised fields
+  R-->>App: answers
+  App->>Mgr: generateRequestId()
+  Mgr-->>App: "REQ010"
+  App->>F: create(commonData, specialisedData)
+  F->>Req: new ICTSupportRequest(common, specialised)
+  Req->>Req: super(common) validates base fields, status = Submitted
+  Req->>Req: validateSpecialisedFields()
+  alt invalid data
+    Req-->>App: ValidationError
+    App->>R: [ERROR] message (nothing saved)
+  else valid
+    F-->>App: request
+    App->>Mgr: submitRequest(request)
+    Mgr->>Mgr: validate, check requester, duplicate ID, status
+    Mgr->>Mgr: requests.push(request), addAudit("Request Created")
+    Mgr->>DS: saveRequests(requests)
+    DS->>Repo: saveAll(serviceRequests.json, requestHistory.json)
+    Mgr->>DS: saveAudit(auditLog)
+    DS->>Repo: saveAll(auditLog.json)
+    Mgr-->>App: request
+    App->>Req: getRequestSummary()
+    App->>R: [OK] Request REQ010 submitted + summary
+  end

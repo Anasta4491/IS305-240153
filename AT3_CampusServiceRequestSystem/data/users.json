@@ -1,0 +1,67 @@
+[
+  {
+    "userId": "DWU2026001",
+    "firstName": "Grace",
+    "lastName": "Kila",
+    "email": "grace.kila@student.campus.example",
+    "userType": "Student",
+    "programme": "Bachelor of Information Technology",
+    "yearLevel": 2
+  },
+  {
+    "userId": "DWU2026002",
+    "firstName": "Peter",
+    "lastName": "Wama",
+    "email": "peter.wama@student.campus.example",
+    "userType": "Student",
+    "programme": "Bachelor of Business Studies",
+    "yearLevel": 3
+  },
+  {
+    "userId": "STF1001",
+    "firstName": "Ruth",
+    "lastName": "Kaupa",
+    "email": "ruth.kaupa@staff.campus.example",
+    "userType": "Staff",
+    "department": "Information Systems"
+  },
+  {
+    "userId": "OFF001",
+    "firstName": "Michael",
+    "lastName": "Tobias",
+    "email": "michael.tobias@staff.campus.example",
+    "userType": "Service Officer",
+    "serviceSection": "Campus Services Help Desk"
+  },
+  {
+    "userId": "TECH001",
+    "firstName": "John",
+    "lastName": "Bais",
+    "email": "john.bais@staff.campus.example",
+    "userType": "Technician",
+    "speciality": "Networking and ICT Support"
+  },
+  {
+    "userId": "TECH002",
+    "firstName": "Lucy",
+    "lastName": "Aihi",
+    "email": "lucy.aihi@staff.campus.example",
+    "userType": "Technician",
+    "speciality": "Electrical and Building Maintenance"
+  },
+  {
+    "userId": "TECH003",
+    "firstName": "Samuel",
+    "lastName": "Pona",
+    "email": "samuel.pona@staff.campus.example",
+    "userType": "Technician",
+    "speciality": "Cleaning and Sanitation"
+  },
+  {
+    "userId": "ADM001",
+    "firstName": "Helen",
+    "lastName": "Morobe",
+    "email": "helen.morobe@staff.campus.example",
+    "userType": "Administrator"
+  }
+]

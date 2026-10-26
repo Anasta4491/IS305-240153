@@ -1,0 +1,13 @@
+stateDiagram-v2
+  direction LR
+  [*] --> Submitted : submitRequest()
+  Submitted --> Reviewed : review() [Service Officer]
+  Submitted --> Cancelled : cancelRequest() [owner]
+  Reviewed --> Assigned : assignTechnician() [Service Officer]
+  Assigned --> InProgress : startWork() [assigned Technician]
+  InProgress --> InProgress : addProgressNote()
+  InProgress --> Resolved : resolve() [assigned Technician]
+  Resolved --> Closed : close() [Service Officer]
+  Cancelled --> [*]
+  Closed --> [*]
+  InProgress : In Progress

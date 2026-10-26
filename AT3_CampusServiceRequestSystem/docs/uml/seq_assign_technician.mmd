@@ -1,0 +1,35 @@
+sequenceDiagram
+  autonumber
+  actor O as Service Officer
+  participant App as CampusServiceApp
+  participant Mgr as ServiceRequestManager
+  participant Req as ServiceRequest (subclass)
+  participant DS as CampusDataStore
+
+  O->>App: Option 10 "Service Officer Workspace", ID OFF001
+  App->>Mgr: findUserById("OFF001")
+  Mgr-->>App: ServiceOfficer (canManageRequests() = true)
+  O->>App: 2 "Review a request" REQ008
+  App->>Mgr: reviewRequest("REQ008", "OFF001", comment)
+  Mgr->>Mgr: requireOfficer(actor)
+  Mgr->>Req: review(actor, comment)
+  Req->>Req: changeStatus(Reviewed): Submitted -> Reviewed allowed, add history
+  Mgr->>DS: save requests + audit
+  O->>App: 4 "Assign a Technician" REQ008
+  App->>Mgr: getUsersByType("Technician")
+  App->>O: list technicians and open jobs
+  O->>App: TECH002, instructions
+  App->>Mgr: assignTechnician("REQ008", "OFF001", "TECH002", comment)
+  Mgr->>Mgr: requireOfficer(actor)
+  Mgr->>Mgr: findUserById("TECH002").canWorkOnRequests()
+  alt not an officer / not a technician / wrong status
+    Mgr->>Mgr: addAudit(outcome "Rejected") (permission or workflow errors)
+    Mgr-->>App: PermissionError / ValidationError / WorkflowError
+    App->>O: [ERROR] message
+  else allowed
+    Mgr->>Req: assignTechnician("TECH002", actor, comment)
+    Req->>Req: changeStatus(Assigned): Reviewed -> Assigned allowed, add history
+    Mgr->>Mgr: addAudit("Technician Assigned", "Success")
+    Mgr->>DS: saveRequests() and saveAudit()
+    App->>O: [OK] REQ008 assigned to TECH002. Status: Assigned
+  end

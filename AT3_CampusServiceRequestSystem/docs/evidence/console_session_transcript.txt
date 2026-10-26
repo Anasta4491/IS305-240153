@@ -1,0 +1,646 @@
+Loaded 8 user(s) and 9 request(s) from /tmp/claude-0/-home-claude/17a90eaa-1b68-5d33-97c6-fe882aba67b0/scratchpad/demo
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 1
+
+--- Register User ---
+User type: 1) Student  2) Staff  3) Service Officer  4) Technician  5) Administrator
+> 1
+User ID (e.g. DWU2026001): DWU2026010
+First name: Anna
+Last name: Tau
+Email address: anna.tau@student.campus.example
+Programme of study: Bachelor of Science
+Year level (1-6): 1
+[OK] User DWU2026010 registered successfully.
+User ID   : DWU2026010
+Name      : Anna Tau
+Email     : anna.tau@student.campus.example
+User Type : Student
+Programme : Bachelor of Science
+Year Level: 1
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 2
+
+--- Submit Service Request ---
+Your user ID: DWU2026010
+Category: 1) ICT Support  2) Facilities Maintenance  3) Cleaning and Sanitation  4) General Campus Service
+> 2
+Title: Broken window latch in tutorial room
+Description: The window latch is broken and the window will not close.
+Campus location: Science Building
+Priority: 1) Low  2) Normal  3) High  4) Urgent [Enter = Normal]
+> 2
+
+Facilities Maintenance details:
+Building: Science Building
+Room number: S-12
+Hazard level: 1) None  2) Low  3) Medium  4) High
+> 2
+Equipment affected: Window latch
+[OK] Request REQ010 submitted with status Submitted.
+--- Facilities Maintenance Request ---
+Request ID  : REQ010
+Type        : MaintenanceRequest
+Title       : Broken window latch in tutorial room
+Description : The window latch is broken and the window will not close.
+Category    : Facilities Maintenance
+Location    : Science Building
+Priority    : Normal
+Status      : Submitted
+Requester   : Anna Tau (DWU2026010)
+Technician  : Not assigned
+Submitted   : 2026-10-25 13:31
+Updated     : 2026-10-25 13:31
+Building    : Science Building
+Room        : S-12
+Hazard Level: Low
+Equipment   : Window latch
+Score/Target: 25 points / 48 hours
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 10
+
+--- Service Officer Workspace ---
+Service Officer ID: OFF001
+Welcome, Michael Tobias (Campus Services Help Desk).
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 1
+
+Waiting for review (highest priority first)
+  ID      | Status      | Prio   | Category                | Title
+  --------------------------------------------------------------------------------
+  REQ009  | Submitted   | Urgent | ICT Support             | Cannot log in to Moodle before assignment deadline
+  REQ008  | Submitted   | Normal | General Campus Service  | Street light not working near car park
+  REQ010  | Submitted   | Normal | Facilities Maintenance  | Broken window latch in tutorial room
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 2
+Request ID: REQ010
+Review comment: Checked on site - window cannot be secured.
+[OK] REQ010 is now Reviewed.
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 4
+Request ID: REQ010
+Technicians:
+  TECH001 - John Bais (Networking and ICT Support) - 1 open job(s)
+  TECH002 - Lucy Aihi (Electrical and Building Maintenance) - 0 open job(s)
+  TECH003 - Samuel Pona (Cleaning and Sanitation) - 1 open job(s)
+Technician ID: TECH002
+Instructions for the Technician (optional): Fix before the evening lock-up.
+[OK] REQ010 assigned to TECH002. Status: Assigned.
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 0
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 11
+
+--- Technician Workspace ---
+Technician ID: TECH002
+Welcome, Lucy Aihi (Electrical and Building Maintenance).
+
+-- Technician Menu --
+1. My assigned requests
+2. Start work
+3. Add progress note
+4. Resolve a request
+0. Back
+Select: 2
+Request ID: REQ010
+Comment (optional): 
+[OK] REQ010 is now In Progress.
+
+-- Technician Menu --
+1. My assigned requests
+2. Start work
+3. Add progress note
+4. Resolve a request
+0. Back
+Select: 3
+Request ID: REQ010
+Progress note: Old latch removed. Replacement ordered from store.
+[OK] Progress note saved.
+
+-- Technician Menu --
+1. My assigned requests
+2. Start work
+3. Add progress note
+4. Resolve a request
+0. Back
+Select: 4
+Request ID: REQ010
+Resolution notes (what was done): Fitted a new window latch and tested it.
+[OK] REQ010 is now Resolved. A Service Officer will verify and close it.
+
+-- Technician Menu --
+1. My assigned requests
+2. Start work
+3. Add progress note
+4. Resolve a request
+0. Back
+Select: 0
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 10
+
+--- Service Officer Workspace ---
+Service Officer ID: OFF001
+Welcome, Michael Tobias (Campus Services Help Desk).
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 6
+Request ID: REQ010
+Verification comment: Requester confirmed the window now locks.
+[OK] REQ010 is now Closed.
+
+-- Officer Menu --
+1. Requests waiting for review
+2. Review a request
+3. Set priority
+4. Assign a Technician
+5. Resolved requests waiting to close
+6. Close a request
+0. Back
+Select: 0
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 13
+
+--- Request History ---
+Request ID: REQ010
+History for REQ010: Broken window latch in tutorial room
+--------------------------------------------------------
+  Date/Time        | Status                  | Action              | Actor                    | Comment
+  -----------------+-------------------------+---------------------+--------------------------+---------------------------------------------------
+  2026-10-25 13:31 | Submitted -> Reviewed   | Request Reviewed    | OFF001 (Service Officer) | Checked on site - window cannot be secured.
+  2026-10-25 13:31 | Reviewed -> Assigned    | Technician Assigned | OFF001 (Service Officer) | Fix before the evening lock-up.
+  2026-10-25 13:31 | Assigned -> In Progress | Work Started        | TECH002 (Technician)     | Work started
+  2026-10-25 13:31 | In Progress             | Progress Note       | TECH002 (Technician)     | Old latch removed. Replacement ordered from store.
+  2026-10-25 13:31 | In Progress -> Resolved | Request Resolved    | TECH002 (Technician)     | Fitted a new window latch and tested it.
+  2026-10-25 13:31 | Resolved -> Closed      | Request Closed      | OFF001 (Service Officer) | Requester confirmed the window now locks.
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 7
+
+--- Cancel My Request ---
+Your user ID: DWU2026002
+Request ID to cancel: REQ010
+Reason for cancelling (optional): x
+Cancel REQ010 "Broken window latch in tutorial room"? (y/n): y
+[ERROR] You can only cancel your own requests. REQ010 belongs to DWU2026010.
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 1
+
+--- Register User ---
+User type: 1) Student  2) Staff  3) Service Officer  4) Technician  5) Administrator
+> 2
+User ID (e.g. DWU2026001): DWU2026011
+First name: Ben
+Last name: Kora
+Email address: ben.kora@
+Department: Finance
+[ERROR] "ben.kora@" is not a valid email address.
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 1
+
+--- Register User ---
+User type: 1) Student  2) Staff  3) Service Officer  4) Technician  5) Administrator
+> 1
+User ID (e.g. DWU2026001): DWU2026001
+First name: Copy
+Last name: Cat
+Email address: copy.cat@student.campus.example
+Programme of study: BIT
+Year level (1-6): 1
+[ERROR] User ID DWU2026001 is already registered.
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 10
+
+--- Service Officer Workspace ---
+Service Officer ID: DWU2026010
+[ERROR] Only Service Officers can use this workspace. DWU2026010 is a Student.
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 8
+
+--- Search Requests ---
+Search text (request ID, title, description or location): latch
+
+2 result(s) for "latch"
+  ID      | Status      | Prio   | Category                | Title
+  --------------------------------------------------------------------------------
+  REQ003  | Closed      | Low    | Facilities Maintenance  | Office door lock jammed
+  REQ010  | Closed      | Normal | Facilities Maintenance  | Broken window latch in tutorial room
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 9
+
+--- Request Summary by Status ---
+Requests by status
+------------------
+  Submitted   :   2  ##
+  Reviewed    :   1  #
+  Assigned    :   1  #
+  In Progress :   1  #
+  Resolved    :   1  #
+  Closed      :   3  ###
+  Cancelled   :   1  #
+  Total       :  10
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 14
+
+--- Management Reports ---
+Administrator or Service Officer ID: ADM001
+
+-- Reports --
+1. Requests by status
+2. Requests by category
+3. Requests by priority
+4. Urgent open requests
+5. Overdue requests
+6. Requests assigned to each Technician
+7. Completed requests by Technician
+8. Average resolution time
+9. Request volume by campus location
+10. Priority scores (polymorphism demo)
+0. Back
+Select: 9
+
+Request volume by campus location
+---------------------------------
+  Location                  | Requests
+  --------------------------+---------
+  Administration Block      | 1
+  ICT Building Lab 3        | 1
+  Lecture Room 4            | 1
+  Lecture Theatre 1         | 1
+  Library Level 1           | 1
+  Library Level 2           | 1
+  North Car Park            | 1
+  Science Building          | 1
+  Student Dining Hall       | 1
+  Student Residence Block C | 1
+
+-- Reports --
+1. Requests by status
+2. Requests by category
+3. Requests by priority
+4. Urgent open requests
+5. Overdue requests
+6. Requests assigned to each Technician
+7. Completed requests by Technician
+8. Average resolution time
+9. Request volume by campus location
+10. Priority scores (polymorphism demo)
+0. Back
+Select: 6
+
+Requests assigned to each Technician
+------------------------------------
+  Technician | Name        | Assigned | Open | Completed
+  -----------+-------------+----------+------+----------
+  TECH002    | Lucy Aihi   | 3        | 0    | 3
+  TECH001    | John Bais   | 2        | 1    | 1
+  TECH003    | Samuel Pona | 1        | 1    | 0
+
+-- Reports --
+1. Requests by status
+2. Requests by category
+3. Requests by priority
+4. Urgent open requests
+5. Overdue requests
+6. Requests assigned to each Technician
+7. Completed requests by Technician
+8. Average resolution time
+9. Request volume by campus location
+10. Priority scores (polymorphism demo)
+0. Back
+Select: 0
+
+============================================
+     CAMPUS SERVICE REQUEST SYSTEM
+============================================
+1. Register User
+2. Submit Service Request
+3. View Request by ID
+4. View My Requests
+5. View All Requests
+6. Update My Request
+7. Cancel My Request
+8. Search Requests
+9. View Request Summary
+--------------------------------------------
+10. Service Officer Workspace
+11. Technician Workspace
+12. Filter and Sort Requests
+13. View Request History
+14. Management Reports
+15. Audit Log
+0. Exit
+============================================
+Select an option: 0
+
+Goodbye. All changes have been saved.

@@ -1,0 +1,45 @@
+sequenceDiagram
+  autonumber
+  actor T as Technician
+  actor O as Service Officer
+  participant App as CampusServiceApp
+  participant Mgr as ServiceRequestManager
+  participant Req as ServiceRequest (subclass)
+  participant DS as CampusDataStore
+
+  T->>App: Option 11 "Technician Workspace", ID TECH002
+  T->>App: 2 "Start work" REQ008
+  App->>Mgr: startWork("REQ008", "TECH002")
+  Mgr->>Mgr: requireAssignedTechnician(request, actor)
+  Mgr->>Req: startWork(actor)
+  Req->>Req: Assigned -> In Progress, add history
+  Mgr->>DS: save requests + audit
+  T->>App: 3 "Add progress note"
+  App->>Mgr: addProgressNote("REQ008", "TECH002", note)
+  Mgr->>Req: addProgressNote(actor, note) (history entry, status unchanged)
+  Mgr->>DS: save requests + audit
+  T->>App: 4 "Resolve a request" + resolution notes
+  App->>Mgr: resolveRequest("REQ008", "TECH002", notes)
+  Mgr->>Mgr: requireAssignedTechnician(request, actor)
+  Mgr->>Req: resolve(actor, notes)
+  Req->>Req: In Progress -> Resolved, dateResolved = now, add history
+  Mgr->>DS: save requests + audit
+  App->>T: [OK] REQ008 is now Resolved
+
+  O->>App: Option 10 "Service Officer Workspace", ID OFF001
+  O->>App: 5 "Resolved requests waiting to close"
+  App->>Mgr: filterRequests({ status: "Resolved" })
+  O->>App: 6 "Close a request" REQ008 + verification comment
+  App->>Mgr: closeRequest("REQ008", "OFF001", comment)
+  Mgr->>Mgr: requireOfficer(actor)
+  Mgr->>Req: close(actor, comment)
+  alt status is not Resolved
+    Req-->>Mgr: WorkflowError (e.g. In Progress -> Closed)
+    Mgr->>Mgr: addAudit(outcome "Rejected")
+    App->>O: [ERROR] message
+  else Resolved
+    Req->>Req: Resolved -> Closed, dateClosed = now, add history
+    Mgr->>Mgr: addAudit("Request Closed", "Success")
+    Mgr->>DS: saveRequests() and saveAudit()
+    App->>O: [OK] REQ008 is now Closed
+  end
